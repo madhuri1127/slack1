@@ -4,6 +4,8 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     auth = require('./modules/slack-salesforce-auth'),
     contact = require('./modules/contact'),
+    contact1 = require('./modules/contact1'),
+    
     account = require('./modules/account'),
     opportunity = require('./modules/opportunity'),
     _case = require('./modules/case'),
@@ -23,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/actions', actions.handle);
 app.post('/pipeline', opportunity.execute);
 app.post('/contacts', contact.execute);
+app.post('/createcontact', contact1.execute);
 app.post('/account', account.execute);
 app.post('/case', _case.execute);
 app.post('/whoami', whoami.execute);
