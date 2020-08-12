@@ -15,7 +15,7 @@ exports.execute = (req, res) => {
         oauthObj = auth.getOAuthObject(slackUserId),
 params = req.body.text.split(":"),
         name = params[0],
-        phone= params[1];
+        phone = params[1];
         
 
   
