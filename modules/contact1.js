@@ -14,20 +14,20 @@ exports.execute = (req, res) => {
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
 params = req.body.text.split(":"),
-        Name = params[0],
-        Phone= params[1];
+        name = params[0],
+        phone= params[1];
         
 
   
  force.create(oauthObj, "Contact",
         {
-          Name:Name,
-         Phone:Phone
+          name:name,
+         phone:phone
         })
         .then(data => {
             let fields = [];
-            fields.push({title: "Name", value: Name, short:false});
-            fields.push({title: "Phone", value: Phone, short:false});
+            fields.push({title: "Name", value: name, short:false});
+            fields.push({title: "Phone", value: phone, short:false});
             fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
             let message = {
                 text: "A new contact has been created:",
