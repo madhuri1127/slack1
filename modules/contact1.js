@@ -28,7 +28,7 @@ params = req.body.text.split(":"),
             let fields = [];
             fields.push({title: "Name", value: Name, short:false});
             fields.push({title: "Phone", value: Phone, short:false});
-            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + contact.id, short:false});
+            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
             let message = {
                 text: "A new contact has been created:",
                 attachments: [
