@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/actions', actions.handle);
 app.post('/pipeline', opportunity.execute);
 app.post('/getopportunitystage', opportunitystageinfo.execute);
+app.post('/changeopportunitystage', opportunitystageinfo.execute);
 app.post('/contacts', contact.execute);
 app.post('/createcontact', contact1.execute);
 app.post('/account', account.execute);
