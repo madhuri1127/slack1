@@ -25,6 +25,7 @@ params = req.body.text.split(":"),
          phone: phone
         })
         .then(data => {
+     console.log("data",JSON.stringify(data));
             let fields = [];
             fields.push({title: "Name", value: name, short:false});
             fields.push({title: "Phone", value: phone, short:false});
