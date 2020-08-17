@@ -21,7 +21,7 @@ exports.execute = (req, res) => {
     force.update(oauthObj,q)
         {
            StageName:StageName
-        })
+        }
         .then(data => {
             let opportunities = JSON.parse(data).records;
             if (opportunities && opportunities.length > 0) {
