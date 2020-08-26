@@ -16,11 +16,12 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0];
-        
+q ="select id from Opportunity Where Name =name"
+       let id= force.query (oauthObj,q)
 
 force.update(oauthObj, "Opportunity",
         {
-            Id:"0062w000004ilulAAA",
+            Id:id,
             StageName :StageName
         })
 
