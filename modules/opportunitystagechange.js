@@ -14,13 +14,13 @@ exports.execute = (req, res) => {
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
         params = req.body.text.split(":"),
-      var   StageName = params[1],
-       var name = params[0],
+         StageName = params[1],
+        name = params[0],
         
- q = "SELECT Id, Name, Amount, Probability, StageName, CloseDate FROM Opportunity WHERE Name LIKE '%" + name + "%' LIMIT 1";
+ q = "SELECT  StageName__c FROM Opportunity WHERE Name LIKE '%" + name + "%' LIMIT 1";
 let re = force.query(q);
 let cooper = re.records;
-cooper.StageName =  StageName;
+cooper.StageName__c =  StageName;
  let ret=    force.sobject('Opportunity').update(cooper)
         
       if (ret.success) {
