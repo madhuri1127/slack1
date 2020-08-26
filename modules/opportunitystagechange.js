@@ -14,8 +14,8 @@ exports.execute = (req, res) => {
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
         params = req.body.text.split(":"),
-         Amount = params[1],
-        name = params[0],
+        let Amount = params[1],
+       let name = params[0],
         
  q = "SELECT  Amount FROM Opportunity WHERE Name LIKE '%" + name + "%' LIMIT 2";
 let re = force.query(q);
