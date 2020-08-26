@@ -16,8 +16,13 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
+        Opportunity conts=[select StageName from Opportunity where Name = name limit 1];
+ 
+   conts.StageName= StageName;
+   update conts;
+}
         
- q = "UPDATE Opportunity set StageName= StageName where Name = name ";
+let q= "update StageName";
 
 
       force.query(oauthObj, q)
