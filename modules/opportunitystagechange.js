@@ -17,10 +17,10 @@ exports.execute = (req, res) => {
          StageName = params[1],
         name = params[0],
         
- q = "SELECT  StageName__c FROM Opportunity WHERE Name LIKE '%" + name + "%' LIMIT 1";
+ q = "SELECT  StageName FROM Opportunity WHERE Name LIKE '%" + name + "%' LIMIT 1";
 let re = force.query(q);
 let cooper = re.records;
-cooper.StageName__c =  StageName;
+cooper.StageName =  StageName;
  let ret=    force.sobject('Opportunity').update(cooper)
         
       if (ret.success) {
