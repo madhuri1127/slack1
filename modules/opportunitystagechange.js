@@ -21,7 +21,7 @@ exports.execute = (req, res) => {
 let re = force.query(q);
 let cooper = re.records;
 cooper.StageName =  StageName;
-     force.sobject('Opportunity').update(cooper);
+     force.sobject('Opportunity').update(cooper)
         .then(data => {
             let opportunities = JSON.parse(data).records;
             if (opportunities && opportunities.length > 0) {
@@ -31,14 +31,11 @@ cooper.StageName =  StageName;
                     
                     
                     fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + opportunity.Id, short:false});
-                    attachments.push({
-                        color: "#FCB95B",
-                        fields: fields
-                    });
+                    
                 });
                 res.json({
                     text: "StageName Changed Successfully"
-                    attachments: attachments
+                    
                 });
             } else {
                 res.send("No records");
