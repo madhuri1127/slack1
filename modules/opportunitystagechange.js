@@ -17,11 +17,11 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0];
 q ="select id from Opportunity Where Name =name"
-       let id= force.query (oauthObj,q)
+        force.query (oauthObj,q).then(s=>{
 
 force.update(oauthObj, "Opportunity",
         {
-            Id:id,
+            Id:opportunity.id,
             StageName :StageName
         })
 
@@ -34,6 +34,7 @@ force.update(oauthObj, "Opportunity",
                 });
             
         })
+})
         .catch(error => {
             if (error.code == 401) {
                 res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
