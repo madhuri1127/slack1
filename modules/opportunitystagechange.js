@@ -26,7 +26,7 @@ force.query(oauthObj, q)
             
                 
                 
-                   let s = contact.id;
+                   var s = contact.id;
                     console.log(s);
                 
                 
