@@ -17,16 +17,16 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0],
         q="select id from Opportunity Where Name = name";
-   id1 = force.query(oauthObj,q);
-    console.log(id1);
+  
+    
     
 
-force.update(oauthObj,"Opportunity",
+force.update(oauthObj, force.query(oauthObj,q),
         {
-            Id : id1,
+            Id : q.id,
             StageName :StageName
         })
-
+console.log(q.id);
         .then(data => {
             
                     
