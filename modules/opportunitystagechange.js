@@ -35,7 +35,7 @@ exports.execute = (req, res) => {
       let opportunities = JSON.parse(data).records;
       opportunities.forEach(function (opportunity) {
            console.log(opportunity.Id);
-      }
+      })
        })
     console.log(d);
 force.update(oauthObj,"Opportunity",
