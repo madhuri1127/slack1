@@ -19,9 +19,9 @@ exports.execute = (req, res) => {
 q ="select id from Opportunity Where Name =name";
         g = force.query(oauthObj,q);
 
-force.update(oauthObj, g,
+force.update(oauthObj,"Opportunity,
         {
-            Id:g.id,
+            Id:0062w000004mOjeAAE,
             StageName :StageName
         })
 
