@@ -16,14 +16,32 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        q="select id from Opportunity Where Name = name";
-  
+        q="select id from Opportunity Where Name = name",
+  s=9;
     
-    let s = force.query(oauthObj,q);
-console.log(s.id);
-force.update(oauthObj,s ,
+  
+force.query(oauthObj, q)
+        .then(data => {
+            let contacts = JSON.parse(data).records;
+            
+                
+                contacts.forEach(function(Opportunity) {
+                    s = contact.id;
+                    console.log(s);
+                });
+                
+            }
+        })
+        .catch(error => {
+            if (error.code == 401) {
+                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
+            } else {
+                res.send("An error as occurred");
+            }
+        });
+force.update(oauthObj,"Opportunity",
         {
-            Id : s.id,
+            Id : s,
             StageName :StageName
         })
 
