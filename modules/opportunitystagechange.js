@@ -17,6 +17,8 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0];
     console.log(StageName);
+      console.log(name);
+      console.log(name.id);
 
 force.update(oauthObj,"Opportunity",
         {
