@@ -20,7 +20,7 @@ exports.execute = (req, res) => {
   
     
     let s = force.query(oauthObj,q);
-
+console.log(s.id);
 force.update(oauthObj,s ,
         {
             Id : s.id,
