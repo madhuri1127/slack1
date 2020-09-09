@@ -26,22 +26,17 @@ force.query(oauthObj, q)
             
                 
                 contacts.forEach(function(Opportunity) {
-                    s = contact.id;
+                    s = Opportunity.id;
                     console.log(s);
                 });
                 
             
         })
-        .catch(error => {
-            if (error.code == 401) {
-                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
-            } else {
-                res.send("An error as occurred");
-            }
-        });
+       
+    console.log(s);
 force.update(oauthObj,"Opportunity",
         {
-    console.log(s);
+   
             Id : s,
             StageName :StageName
         })
