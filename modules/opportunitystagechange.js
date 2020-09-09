@@ -41,6 +41,7 @@ force.query(oauthObj, q)
         });
 force.update(oauthObj,"Opportunity",
         {
+    console.log(s);
             Id : s,
             StageName :StageName
         })
