@@ -30,7 +30,7 @@ force.query(oauthObj, q)
                     console.log(s);
                 });
                 
-            }
+            
         })
         .catch(error => {
             if (error.code == 401) {
