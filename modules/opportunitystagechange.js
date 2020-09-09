@@ -26,7 +26,7 @@ force.update(oauthObj, force.query(oauthObj,q),
             Id : q.id,
             StageName :StageName
         })
-console.log(q.id);
+
         .then(data => {
             
                     
