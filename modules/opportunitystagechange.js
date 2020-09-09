@@ -19,11 +19,11 @@ exports.execute = (req, res) => {
         q="select id from Opportunity Where Name = name";
   
     
-    
+    let s = force.query(oauthObj,q);
 
-force.update(oauthObj, force.query(oauthObj,q),
+force.update(oauthObj,s ,
         {
-            Id : q.id,
+            Id : s.id,
             StageName :StageName
         })
 
