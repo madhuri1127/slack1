@@ -2,7 +2,8 @@
 
 let auth = require("./slack-salesforce-auth"),
     force = require("./force"),
-    CHANGESTAGE_TOKEN = process.env.SLACK_CHANGESTAGE_TOKEN;
+    CHANGESTAGE_TOKEN = process.env.SLACK_CHANGESTAGE_TOKEN,
+    opp =[];
 
 exports.execute = (req, res) => {
 
@@ -17,7 +18,7 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0],
         q="select id from Opportunity Where Name = name";
-    var s= "jj";
+    
   
     
   
@@ -27,18 +28,16 @@ force.query(oauthObj, q)
             
                 
                 
-                    s = contact.id;
-                    console.log(s);
-                
+                  
                 
             
-        })
+        
        
     
 force.update(oauthObj,"Opportunity",
         {
    
-            Id : s,
+            Id : contact.id,
             StageName :StageName
         })
 
@@ -60,6 +59,7 @@ force.update(oauthObj,"Opportunity",
                 res.send("An error as occurred");
             }
         });
+})
 
      
 };
