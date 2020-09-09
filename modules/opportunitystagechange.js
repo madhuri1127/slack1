@@ -15,9 +15,8 @@ exports.execute = (req, res) => {
         oauthObj = auth.getOAuthObject(slackUserId),
         params = req.body.text.split(":"),
         StageName = params[1],
-        name = params[0],
-q ="select id from Opportunity Where Name =name";
-        g = force.query(oauthObj,q);
+        name = params[0];
+
 
 force.update(oauthObj,"Opportunity",
         {
