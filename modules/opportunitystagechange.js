@@ -32,8 +32,10 @@ exports.execute = (req, res) => {
   const g =    force.query(oauthObj,q)
     
   var d =     g.then((data)=>{
-      let contacts = JSON.parse(data).records;
-           console.log(contacts);
+      let opportunities = JSON.parse(data).records;
+      opportunities.forEach(function (opportunity) {
+           console.log(opportunity.Id);
+      }
        })
     console.log(d);
 force.update(oauthObj,"Opportunity",
