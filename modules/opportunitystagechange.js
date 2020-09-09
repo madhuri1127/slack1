@@ -35,7 +35,7 @@ exports.execute = (req, res) => {
            console.log(data);
        })
     
-force.update(oauthObj,"Opportunity,
+force.update(oauthObj,"Opportunity",
         {
    
             Id : "0062w000004ilulAAA",
