@@ -16,7 +16,8 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        id1="select id from Opportunity Where Name = name";
+        q="select id from Opportunity Where Name = name";
+   id1 = force.query(oauthObj,q);
     console.log(id1);
     
 
