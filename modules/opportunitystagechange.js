@@ -17,6 +17,7 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0],
         q="select id from Opportunity Where Name = name";
+    var s= "jj";
   
     
   
@@ -26,14 +27,14 @@ force.query(oauthObj, q)
             
                 
                 
-                   var s = contact.id;
+                    s = contact.id;
                     console.log(s);
                 
                 
             
         })
        
-    console.log(s);
+    
 force.update(oauthObj,"Opportunity",
         {
    
@@ -51,5 +52,5 @@ force.update(oauthObj,"Opportunity",
             
         })
 
-     console.log(s);
+     
 };
