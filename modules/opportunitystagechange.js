@@ -31,10 +31,11 @@ exports.execute = (req, res) => {
             
   const g =    force.query(oauthObj,q)
     
-  var d=     g.then((data)=>{
-           console.log(data);
+  var d =     g.then((data)=>{
+      let contacts = JSON.parse(data).records;
+           console.log(contacts);
        })
-    
+    console.log(d);
 force.update(oauthObj,"Opportunity",
         {
    
