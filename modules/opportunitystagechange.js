@@ -22,9 +22,7 @@ exports.execute = (req, res) => {
   
     
   
-force.query(oauthObj, q)
-        .then(data => {
-            let contact = JSON.parse(data).records;
+
             
                 
                 
@@ -34,10 +32,10 @@ force.query(oauthObj, q)
         
        
     
-force.update(oauthObj,"Opportunity",
+force.update(oauthObj,force.query(oauthObj,q),
         {
    
-            Id : JSON.parse(data).records.id,
+            Id : force.query(oauthObj,q).id,
             StageName :StageName
         })
 
@@ -59,14 +57,5 @@ force.update(oauthObj,"Opportunity",
                 res.send("An error as occurred");
             }
         });
-})
-.catch(error => {
-            if (error.code == 401) {
-                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
-            } else {
-                console.log(error);
-                res.send("An error as occurred");
-            }
-        });
-     
+
 };
