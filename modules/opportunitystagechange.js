@@ -37,7 +37,7 @@ force.query(oauthObj, q)
 force.update(oauthObj,"Opportunity",
         {
    
-            Id : contact.id,
+            Id : JSON.parse(data).records.id,
             StageName :StageName
         })
 
