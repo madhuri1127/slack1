@@ -16,8 +16,8 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        q="select id from Opportunity Where Name = name",
-  s=9;
+        q="select id from Opportunity Where Name = name";
+  
     
   
 force.query(oauthObj, q)
@@ -26,7 +26,7 @@ force.query(oauthObj, q)
             
                 
                 
-                    s = contact.id;
+                   let s = contact.id;
                     console.log(s);
                 
                 
@@ -51,12 +51,5 @@ force.update(oauthObj,"Opportunity",
             
         })
 
-        .catch(error => {
-            if (error.code == 401) {
-                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
-            } else {
-                console.log(error);
-                res.send("An error as occurred");
-            }
-        });
+     console.log(s);
 };
