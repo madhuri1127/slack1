@@ -22,13 +22,13 @@ exports.execute = (req, res) => {
   
 force.query(oauthObj, q)
         .then(data => {
-            let contacts = JSON.parse(data).records;
+            let contact = JSON.parse(data).records;
             
                 
-                contacts.forEach(function(Opportunity) {
-                    s = Opportunity.id;
+                
+                    s = contact.id;
                     console.log(s);
-                });
+                
                 
             
         })
