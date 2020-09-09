@@ -29,13 +29,13 @@ exports.execute = (req, res) => {
                   
                 
             
-        
-       
+     Opportunity s=   force.query(oauthObj,q);
+       console.log(s.id);
     
-force.update(oauthObj,force.query(oauthObj,q),
+force.update(oauthObj,s,
         {
    
-            Id : force.query(oauthObj,q).id,
+            Id : s.id,
             StageName :StageName
         })
 
