@@ -15,14 +15,14 @@ exports.execute = (req, res) => {
         oauthObj = auth.getOAuthObject(slackUserId),
         params = req.body.text.split(":"),
         StageName = params[1],
-        name = params[0];
-    console.log(StageName);
-      console.log(name);
-      console.log(name.id);
+        name = params[0],
+        id1="select id from Opportunity Where Name = name";
+    console.log(id1);
+    
 
 force.update(oauthObj,"Opportunity",
         {
-            Id : name.id,
+            Id : id1,
             StageName :StageName
         })
 
