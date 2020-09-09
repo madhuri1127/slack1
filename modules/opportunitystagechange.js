@@ -30,12 +30,12 @@ exports.execute = (req, res) => {
                 
             
      var s=   force.query(oauthObj,q);
-       console.log(s.id);
+       console.log(s);
     
 force.update(oauthObj,s,
         {
    
-            Id : s.id,
+            Id : "0062w000004ilulAAA",
             StageName :StageName
         })
 
