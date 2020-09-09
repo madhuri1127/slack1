@@ -29,7 +29,7 @@ exports.execute = (req, res) => {
                   
                 
             
-     Opportunity s=   force.query(oauthObj,q);
+     var s=   force.query(oauthObj,q);
        console.log(s.id);
     
 force.update(oauthObj,s,
