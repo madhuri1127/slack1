@@ -21,7 +21,7 @@ q ="select id from Opportunity Where Name =name";
 
 force.update(oauthObj,"Opportunity",
         {
-            Id :0062w000004mOjeAAE,
+            Id :"0062w000004mOjeAAE",
             StageName :StageName
         })
 
