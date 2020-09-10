@@ -60,7 +60,7 @@ exports.execute = (req, res) => {
 force.update(oauthObj,"Opportunity",
         {
                Id :op,
-            StageName :StageName
+            StageName :"Negotiation"
         })
             
          .then(data => {
