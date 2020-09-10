@@ -19,7 +19,7 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0];
           
-   let   q="select Id, Name,StageName from Opportunity where  Name = '" + name + "' Limit 1 ";
+   let   q="select Id, Name,StageName from Opportunity where  Name = '" + name + "'";
     
        
   
