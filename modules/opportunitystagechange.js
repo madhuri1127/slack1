@@ -2,8 +2,8 @@
 
 let auth = require("./slack-salesforce-auth"),
     force = require("./force"),
-    CHANGESTAGE_TOKEN = process.env.SLACK_CHANGESTAGE_TOKEN,
-    opp =[];
+    CHANGESTAGE_TOKEN = process.env.SLACK_CHANGESTAGE_TOKEN;
+  var  opp =[];
 
 exports.execute = (req, res) => {
 
