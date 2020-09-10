@@ -72,6 +72,6 @@ force.update(oauthObj,"Opportunity",
                 console.log(error);
                 res.send("An error as occurred");
             }
-        });*/
+        });
 
 };
