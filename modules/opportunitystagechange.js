@@ -49,13 +49,9 @@ exports.execute = (req, res) => {
      
     
  
-/*force.update(oauthObj, "Opportunity",
-             {
-    
-})
-        
-
-        .then(data => {
+force.update(oauthObj, "Opportunity",opp[0])
+            
+         .then(data => {
             
                     
                 res.json({
@@ -72,6 +68,6 @@ exports.execute = (req, res) => {
                 console.log(error);
                 res.send("An error as occurred");
             }
-        });*/
+        });
 
 };
