@@ -18,7 +18,7 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        q="select Id,StageName from Opportunity where Name= 'Demo 1' Limit 1 ";
+        q="select Id,StageName from Opportunity where Name= name Limit 1 ";
     
   
     
