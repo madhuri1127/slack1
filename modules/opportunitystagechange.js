@@ -39,10 +39,12 @@ exports.execute = (req, res) => {
                opp=contacts;
              
               
-                 
+               
                 
             op=JSON.stringify(opp[0].Id);
+                  console.log(op);
                 op = op.replace(/"/g, '');
+                console.log(op);
     
     })
  .catch(error => {
@@ -65,6 +67,8 @@ force.update(oauthObj,"Opportunity",
             
          .then(data => {
            
+      console.log(op);
+      console.log(StageName);
     
                 res.json({
                     text: "StageName Changed Successfully"
