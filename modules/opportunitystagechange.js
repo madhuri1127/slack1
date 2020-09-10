@@ -30,13 +30,11 @@ exports.execute = (req, res) => {
                 
             force.query(oauthObj, q)
         .then(data => {
-                //console.log(data);
-               // console.log(JSON.parse(data).records);
+                
             let contacts = JSON.parse(data).records;
-              //opp= JSON.parse(contacts);
+              
                opp=contacts;
-                console.log( 'string'+JSON.stringify(opp[0]));
-                console.log( 'string'+JSON.stringify(opp[0].Id));
+              
                 
             })
     .catch(error => {
@@ -51,7 +49,11 @@ exports.execute = (req, res) => {
      
     
  
-/*force.update(oauthObj, "Opportunity",opp[0])
+force.update(oauthObj,"Opportunity",
+        {
+            Id :JSON.stringify(opp[0].Id),
+            StageName :StageName
+        })
             
          .then(data => {
             
