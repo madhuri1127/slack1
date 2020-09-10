@@ -52,7 +52,7 @@ force.update(oauthObj,"Opportunity",
             
          .then(data => {
             
-              console.log(JSON.stringify(opp[0].Id));      
+              console.log(p);      
                 res.json({
                     text: "StageName Changed Successfully"
                  
