@@ -33,8 +33,8 @@ exports.execute = (req, res) => {
                 //console.log(data);
                // console.log(JSON.parse(data).records);
             let contacts = JSON.parse(data).records;
-               // console.log(contacts);
-                opp=contacts;
+              opp= JSON.parse(contacts);
+               // opp=contacts;
                 console.log(opp);
             })
     .catch(error => {
