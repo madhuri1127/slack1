@@ -56,7 +56,7 @@ exports.execute = (req, res) => {
      
        
  
-/*force.update(oauthObj,"Opportunity",
+force.update(oauthObj,"Opportunity",
         {
                Id :op,
             StageName :"Negotiation"
@@ -81,6 +81,6 @@ exports.execute = (req, res) => {
                 console.log(error);
                 res.send("An error as occurred");
             }
-        });*/
+        });
            
 };
