@@ -17,8 +17,9 @@ exports.execute = (req, res) => {
         oauthObj = auth.getOAuthObject(slackUserId),
         params = req.body.text.split(":"),
         StageName = params[1],
-        name = params[0],
-        q="select Id, Name ,StageName from Opportunity where Name LIKE '%" + req.body.text.split(":")[0] + "%' Limit 1 ";
+        name = params[0];
+          name = name.replace(/"/g, '');
+   let   q="select Id, Name ,StageName from Opportunity where Name LIKE '%" + name + "%' Limit 1 ";
     
         console.log(name);
   
