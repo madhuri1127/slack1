@@ -36,6 +36,8 @@ exports.execute = (req, res) => {
               //opp= JSON.parse(contacts);
                opp=contacts;
                 console.log( 'string'+JSON.stringify(opp[0]));
+                console.log( 'string'+JSON.stringify(opp[0].Id));
+                
             })
     .catch(error => {
             if (error.code == 401) {
