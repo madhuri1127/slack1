@@ -30,12 +30,12 @@ exports.execute = (req, res) => {
                 
             force.query(oauthObj, q)
         .then(data => {
-                console.log(data);
-                console.log(JSON.parse(data).records);
+                //console.log(data);
+               // console.log(JSON.parse(data).records);
             let contacts = JSON.parse(data).records;
-                console.log(contacts);
+               // console.log(contacts);
                 opp=contacts;
-                console.log(opp[0]);
+                console.log(opp);
             })
     .catch(error => {
             if (error.code == 401) {
