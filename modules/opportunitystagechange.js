@@ -45,7 +45,7 @@ exports.execute = (req, res) => {
  
 force.update(oauthObj,"Opportunity",
         {
-             Id :"0062w000004mOjeAAE",
+             Id :JSON.stringify(opp[0].Id),
             StageName :StageName
         })
             
