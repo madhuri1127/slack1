@@ -34,6 +34,7 @@ exports.execute = (req, res) => {
             let contacts = JSON.parse(data).records;
               
                opp=contacts;
+                console.log(JSON.stringify(opp[0].Id));
               
                 
             })
@@ -51,7 +52,7 @@ exports.execute = (req, res) => {
  
 force.update(oauthObj,"Opportunity",
         {
-            Id :JSON.stringify(opp[0].Id),
+             Id :"0062w000004mOjeAAE",
             StageName :StageName
         })
             
