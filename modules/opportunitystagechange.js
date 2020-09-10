@@ -18,8 +18,8 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0];
-          name = name.replace(/"/g, '');
-   let   q="select Id, Name ,StageName from Opportunity where Name LIKE '%" + name + "%' Limit 1 ";
+          
+   let   q="select Id, Name,StageName from Opportunity where Name LIKE '%" + req.body.text + "%'  Limit 1 ";
     
         console.log(name);
   
@@ -60,7 +60,7 @@ exports.execute = (req, res) => {
 force.update(oauthObj,"Opportunity",
         {
                Id :op,
-            StageName :StageName
+            StageName :"Negotiation"
         })
             
          .then(data => {
