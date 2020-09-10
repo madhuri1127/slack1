@@ -17,7 +17,7 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        q="select id from Opportunity Limit 1";
+        q="select id,StageName from Opportunity Limit 1";
     
   
     
@@ -34,6 +34,7 @@ exports.execute = (req, res) => {
                 console.log(JSON.parse(data).records);
             let contacts = JSON.parse(data).records;
                 console.log(contacts);
+                opp=contacts;
             })
     .catch(error => {
             if (error.code == 401) {
@@ -47,12 +48,8 @@ exports.execute = (req, res) => {
      
     
  
-force.update(oauthObj, "Opportunity",
-        {
-   
-            Id : "0062w000004ilulAAA",
-            StageName :StageName
-        })
+force.update(oauthObj, "Opportunity",opp[0])
+        
 
         .then(data => {
             
