@@ -19,7 +19,7 @@ exports.execute = (req, res) => {
         StageName = params[1],
         name = params[0];
           
-   let   q="select Id, Name,StageName from Opportunity where Name LIKE '%name' Limit 1 ";
+   let   q="select Id, Name,StageName from Opportunity where Name='fin 2' Limit 1 ";
     
        
   
