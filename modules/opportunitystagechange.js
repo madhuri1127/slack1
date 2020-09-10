@@ -28,10 +28,7 @@ exports.execute = (req, res) => {
 
             
                 
-                
-                  
-                
-            force.query(oauthObj, q)
+           force.query(oauthObj, q)
         .then(data => {
                 
             let contacts = JSON.parse(data).records;
@@ -59,7 +56,7 @@ exports.execute = (req, res) => {
      
        
  
-force.update(oauthObj,"Opportunity",
+/*force.update(oauthObj,"Opportunity",
         {
                Id :op,
             StageName :"Negotiation"
@@ -84,6 +81,6 @@ force.update(oauthObj,"Opportunity",
                 console.log(error);
                 res.send("An error as occurred");
             }
-        });
+        });*/
            
 };
