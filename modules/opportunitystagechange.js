@@ -4,6 +4,7 @@ let auth = require("./slack-salesforce-auth"),
     force = require("./force"),
     CHANGESTAGE_TOKEN = process.env.SLACK_CHANGESTAGE_TOKEN;
   var  opp = [] ;
+var op =[];
 
 exports.execute = (req, res) => {
 
@@ -36,8 +37,8 @@ exports.execute = (req, res) => {
                opp=contacts;
              
               
-                
-            
+                 console.log(JSON.stringify(opp[0].Id));   
+            op=JSON.stringify(opp[0].Id);
     
    
      
