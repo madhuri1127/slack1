@@ -18,7 +18,7 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        q="select id,StageName from Opportunity where Name = name Limit 1 ";
+        q="select id,StageName from Opportunity  Limit 1 ";
     
   
     
@@ -52,7 +52,7 @@ force.update(oauthObj,"Opportunity",
             
          .then(data => {
             
-              console.log(p);      
+             // console.log(p);      
                 res.json({
                     text: "StageName Changed Successfully"
                  
