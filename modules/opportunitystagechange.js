@@ -18,7 +18,7 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
-        q="select id,StageName from Opportunity  Limit 1 ";
+        q="select Id,StageName from Opportunity  Limit 1 ";
     
   
     
@@ -55,7 +55,7 @@ exports.execute = (req, res) => {
  
 force.update(oauthObj,"Opportunity",
         {
-              Id :op,
+              Id :"0062w000004mOjeAAE",
             StageName :StageName
         })
             
