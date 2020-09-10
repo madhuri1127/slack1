@@ -35,7 +35,7 @@ exports.execute = (req, res) => {
             let contacts = JSON.parse(data).records;
               //opp= JSON.parse(contacts);
                opp=contacts;
-                console.log( 'string'+opp[0]);
+                console.log( 'string'+JSON.stringify(opp[0]));
             })
     .catch(error => {
             if (error.code == 401) {
