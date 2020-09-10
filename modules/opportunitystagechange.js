@@ -35,6 +35,7 @@ exports.execute = (req, res) => {
             let contacts = JSON.parse(data).records;
                 console.log(contacts);
                 opp=contacts;
+                console.log(opp[0]);
             })
     .catch(error => {
             if (error.code == 401) {
@@ -48,7 +49,10 @@ exports.execute = (req, res) => {
      
     
  
-force.update(oauthObj, "Opportunity",opp[0])
+/*force.update(oauthObj, "Opportunity",
+             {
+    
+})
         
 
         .then(data => {
@@ -68,6 +72,6 @@ force.update(oauthObj, "Opportunity",opp[0])
                 console.log(error);
                 res.send("An error as occurred");
             }
-        });
+        });*/
 
 };
