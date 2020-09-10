@@ -55,13 +55,15 @@ exports.execute = (req, res) => {
  
 force.update(oauthObj,"Opportunity",
         {
-              Id :op,
+               Id :"0062w000004mOjeAAE",
             StageName :StageName
         })
             
          .then(data => {
             
-              console.log(op);      
+              console.log(op);
+     console.log(StageName);
+    
                 res.json({
                     text: "StageName Changed Successfully"
                  
