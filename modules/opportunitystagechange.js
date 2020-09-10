@@ -28,8 +28,22 @@ exports.execute = (req, res) => {
                 
                   
                 
-          var s=  force.query(oauthObj,q);
-    console.log(s);
+            force.query(oauthObj, q)
+        .then(data => {
+                console.log(data);
+                console.log(JSON.parse(data).records);
+            let contacts = JSON.parse(data).records;
+                console.log(contacts);
+            })
+    .catch(error => {
+            if (error.code == 401) {
+                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
+            } else {
+                console.log(error);
+                res.send("An error as occurred");
+            }
+        });
+   
      
     
  
