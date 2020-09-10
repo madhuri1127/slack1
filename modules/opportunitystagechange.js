@@ -18,6 +18,7 @@ exports.execute = (req, res) => {
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0],
+        console.log(name);
         q="select Id,StageName from Opportunity where Name= name Limit 1 ";
     
   
