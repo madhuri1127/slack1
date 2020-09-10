@@ -40,7 +40,16 @@ exports.execute = (req, res) => {
                  console.log(JSON.stringify(opp[0].Id));   
             op=JSON.stringify(opp[0].Id);
     
-   
+    })
+ .catch(error => {
+            if (error.code == 401) {
+                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
+            } else {
+                console.log(error);
+                res.send("An error as occurred");
+            }
+        });
+    
      
        
  
@@ -68,14 +77,5 @@ force.update(oauthObj,"Opportunity",
                 res.send("An error as occurred");
             }
         });
-            })
- .catch(error => {
-            if (error.code == 401) {
-                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
-            } else {
-                console.log(error);
-                res.send("An error as occurred");
-            }
-        });
-    
+           
 };
