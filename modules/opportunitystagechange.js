@@ -13,13 +13,17 @@ exports.execute = (req, res) => {
         return;
     }
 
+    
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
         params = req.body.text.split(":"),
         StageName = params[1],
         name = params[0];
           
-   let   q="select Id, Name,StageName from Opportunity where Name = name Limit 1";
+   let   q="select Id, Name,StageName from Opportunity where Name = ";
+    
+    q+=name;
+    
     
        
   
