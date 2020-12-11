@@ -21,13 +21,13 @@ params = req.body.text.split(":"),
   
  force.create(oauthObj, "Contact",
         {
-          Name: name,
+          Email: name,
          Phone: phone
         })
         .then(data => {
      console.log("data",JSON.stringify(data));
             let fields = [];
-            fields.push({title: "Name", value: name, short:false});
+            fields.push({title: "Email", value: name, short:false});
             fields.push({title: "Phone", value: phone, short:false});
             fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
             let message = {
