@@ -21,7 +21,7 @@ params = req.body.text.split(":"),
   
  force.create(oauthObj, "Contact",
         {
-          Email: name,
+          LastName: name,
          Phone: phone
         })
         .then(data => {
