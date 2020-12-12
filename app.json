@@ -1,6 +1,6 @@
 {
-  "name": "Slackforce",
-  "description": "Simple message broker to enable Slack to Salesforce communication using Slash Commands",
+  "name": "Salesforce Slack Connector",
+  "description": " Enable Slack to Salesforce communication using Slash Commands",
   "env": {
     "SF_CLIENT_ID": {
         "description": "Consumer key of your Salesforce Connected App",
